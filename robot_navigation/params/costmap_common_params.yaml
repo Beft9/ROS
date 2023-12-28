@@ -1,0 +1,20 @@
+global_frame: map
+robot_base_frame: base_link
+obstacle_range: 20.0
+raytrace_range: 30.0
+footprint: [[0.1, 0], [0.06, 0.18], [-0.21, 0.18], [-0.24, 0], [-0.21, -0.18], [0.06, -0.18], ]
+
+#robot_radius: ir_of_robot
+# inflation_radius: 1.0
+transform_tolerance: 0.5
+
+static:
+  map_topic: /map
+  subscribe_to_updates: true
+
+obstacles:
+    observation_sources: base_scan
+    base_scan: {data_type: LaserScan, sensor_frame: lidar_link, clearing: true, marking: true, topic: /laser/scan_filtered}
+
+inflation:
+  inflation_radius: 1.0

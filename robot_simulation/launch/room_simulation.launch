@@ -1,0 +1,10 @@
+<launch>
+	<include file="$(find gazebo_ros)/launch/empty_world.launch" >
+		<arg name="world_name" value="$(find robot_simulation)/worlds/room.world"/> 
+	</include>
+	<include file="$(find robot_description)/launch/display_simulation.launch" />
+
+  	<include file="$(find robot_localization)/launch/hector_mapping.launch" />
+	<include file="$(find robot_navigation)/launch/base_planner.launch" />
+
+</launch>

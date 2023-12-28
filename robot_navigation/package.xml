@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>robot_navigation</name>
+  <version>0.0.0</version>
+  <description>The robot_navigation package</description>
+  <maintainer email="bayraktarr16@itu.edu.tr">R.Berkay Bayraktar</maintainer>
+
+  <license>TODO</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>rospy</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>dynamic_reconfigure</build_depend>
+  <build_export_depend>rospy</build_export_depend>
+
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>move_base</exec_depend>
+  <exec_depend>map_server</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>teb_local_planner</exec_depend>
+  <exec_depend>global_planner</exec_depend>
+  <exec_depend>dynamic_reconfigure</exec_depend>
+
+  <export>
+  </export>
+</package>

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<launch>
+  
+  <node pkg="hector_mapping" type="hector_mapping" name="hector_mapping" output="screen">
+    
+    <rosparam command="load" file="$(find robot_localization)/config/hector_mapping_params.yaml" />
+    
+    <!-- Debug parameters -->
+    <!--
+      <param name="output_timing" value="false"/>
+      <param name="pub_drawings" value="true"/>
+      <param name="pub_debug_output" value="true"/>
+    -->
+    
+  </node>
+
+  <node name="odom_publisher" type="odom_publisher.py" pkg="robot_localization" />
+  
+</launch>
+  
+  
