@@ -1,7 +1,7 @@
 # ROS
 Example implementations of different algorithms for a robot in simulation
 
-1) hector mapping + move base
+1) hector mapping + move base <br/>
    A simple implementation of hector mapping with move base. Only lidar sensor is used to determine odometry with hector mapping for move base. you can try with:<br />
      ► roslaunch robot_simulation room_simulation.launch
     
