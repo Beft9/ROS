@@ -1,0 +1,28 @@
+<launch>
+
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+        <rosparam file="$(find robot_navigation)/params/costmap_common_params.yaml" command="load" ns="global_costmap" /> 
+        <rosparam file="$(find robot_navigation)/params/costmap_common_params.yaml" command="load" ns="local_costmap" />
+        <rosparam file="$(find robot_navigation)/params/local_costmap_params.yaml" command="load" />
+        <rosparam file="$(find robot_navigation)/params/global_costmap_params.yaml" command="load" /> 
+        <rosparam file="$(find robot_navigation)/params/trajectory_planner.yaml" command="load" />
+
+        <param name="base_global_planner" value="navfn/NavfnROS" />
+        <param name="base_local_planner" value="base_local_planner/TrajectoryPlannerROS" />
+        <!-- <param name="base_local_planner" value="dwa_local_planner::DWAPlannerROS" /> -->
+        <param name="planner_frequency" value="1.0" />
+        <param name="planner_patience" value="10.0" />
+
+        <param name="controller_frequency" value="20.0" />
+        <param name="controller_patience" value="15.0" />
+        <param name="clearing_rotation_allowed" value="false" />
+
+        <remap from="move_base_simple/goal" to="goal" />
+        
+    </node>
+
+    <node name="waypoint_follower" type="waypoint_follower.py" pkg="robot_navigation" output="screen" />
+    <node name="rqt_gui_node" type="rqt_gui" pkg="rqt_gui" args="-s reconfigure" />
+
+</launch>
+
